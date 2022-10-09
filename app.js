@@ -1,4 +1,14 @@
+console.log(`
 
+████████ ██   ██ ██ ██████  ███████ ███████ ███████ 
+   ██    ██   ██ ██ ██   ██    ███  ██      ██      
+   ██    ███████ ██ ██████    ███   █████   █████   
+   ██    ██   ██ ██ ██   ██  ███    ██      ██      
+   ██    ██   ██ ██ ██████  ███████ ███████ ███████ 
+                                                    
+                                                    
+
+`);
 
 function calcul (){
     var base = document.querySelector('#base').value;
@@ -6,14 +16,20 @@ function calcul (){
     var alert = document.querySelector('.text-alert');
     var arome = document.querySelector('#arome').value;
 
+    var baseNeed = document.querySelector('#baseNeed');
+    var aromeNeed = document.querySelector('#aromeNeed');
+    var nicoNeed = document.querySelector('#nicoNeed');
+    var result = document.querySelector('.result');
+
     let nicotineNeeded = nicotine * base / 20;
     let aromeNeeded = base * arome / 100;
     let baseNeeded = base - (nicotineNeeded + aromeNeeded );
     
-    if(baseNeeded && aromeNeeded && nicotineNeeded != null && aromeNeeded >= 5){
-        console.log('Besoin de : ' + nicotineNeeded + 'ml de booster');
-        console.log('Besoin de : ' + aromeNeeded + 'ml d\'arome'); 
-        console.log('Besoin de : ' + baseNeeded + 'ml de base');
+    if(baseNeeded && aromeNeeded && nicotineNeeded != null){
+        baseNeed.innerHTML = "Vous avez besoin de : " +  baseNeeded + "ml de base";
+        nicoNeed.innerHTML = "Vous avez besoin de : " +  nicotineNeeded + "ml de booster";
+        aromeNeed.innerHTML = "Vous avez besoin de : " +  aromeNeeded + "ml d'arôme";
+        result.removeAttribute('hidden');
     }
     
 
@@ -28,4 +44,4 @@ function calcul (){
 }
 
 
-document.addEventListener('input', ()=> calcul());
+document.addEventListener('input', (e)=> calcul());

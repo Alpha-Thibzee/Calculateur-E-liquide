@@ -14,14 +14,15 @@
 <body>
     
 
-    <h1 class="text-center mt-5">Calculateur E-liquide by Thibzee</h1>
+    
 
     <div class="form container-fluid row m-0 p-0 ">
+        <h1 class="text-center mb-5">Calculateur E-liquide by Thibzee</h1>
         <form class=" d-flex flex-column align-items-center" id="form">
-            <input class="input col-10 col-md-8 col-lg-8" type="number" name="base" id="base" placeholder="Volume d'e-liquide souhaité">
+            <input class="input col-10 col-md-8 col-lg-8" type="number" pattern="\d*" name="base" id="base" placeholder="Volume d'e-liquide souhaité">
             <p class="text-alert" hidden></p>
-            <input class="input col-10 col-md-8 col-lg-8" type="number" max="20" name="nicotine" id="nicotine" placeholder="Quantité de nicotine souhaité">
-            <input class="input col-10 col-md-8 col-lg-8" type="number" name="arome" id="arome" placeholder="Dosage de l'arome (en %)">
+            <input class="input col-10 col-md-8 col-lg-8" type="number" pattern="\d*" max="20" name="nicotine" id="nicotine" placeholder="Quantité de nicotine souhaité">
+            <input class="input col-10 col-md-8 col-lg-8" type="number" pattern="\d*" name="arome" id="arome" placeholder="Dosage de l'arome (en %)">
         </form>
         <div class="result  col-10 col-md-8 col-lg-8 mx-auto mt-5" hidden>
             <div class=" col-10 col-md-8 col-lg-8 mx-auto">

@@ -21,27 +21,29 @@ function calcul (){
     var nicoNeed = document.querySelector('#nicoNeed');
     var result = document.querySelector('.result');
 
-    let nicotineNeeded = nicotine * base / 20;
-    let aromeNeeded = base * arome / 100;
-    let baseNeeded = base - (nicotineNeeded + aromeNeeded );
-    
-    if(baseNeeded && aromeNeeded && nicotineNeeded != null){
+    let nicoNeeded = (nicotine * base) / 20;
+    let aromeNeeded = (base * arome) / 100;
+    let baseNeeded = base - (nicoNeeded + aromeNeeded );
+
+    if(baseNeed && aromeNeed && nicoNeed != null){
+       
         baseNeed.innerHTML = "Vous avez besoin de : " +  baseNeeded + "ml de base";
-        nicoNeed.innerHTML = "Vous avez besoin de : " +  nicotineNeeded + "ml de booster";
+        nicoNeed.innerHTML = "Vous avez besoin de : " +  nicoNeeded + "ml de booster";
         aromeNeed.innerHTML = "Vous avez besoin de : " +  aromeNeeded + "ml d'arôme";
         result.removeAttribute('hidden');
     }
     
 
-    if(nicotineNeeded <= base){
-        alert.setAttribute('hidden', '');
-    } else {
-        alert.innerHTML ='Le taux de nicotine doit être inférieur à 20mg/ml';
+    if(nicotine >=18 ){
+        alert.innerHTML ='Le taux de nicotine doit être inférieur à 18mg/ml';
         alert.removeAttribute('hidden');
+        document.querySelector('#nicotine').value = 17;
+    } else {
+        alert.setAttribute('hidden' , '');
     }
 
     
 }
 
 
-document.addEventListener('input', (e)=> calcul());
+document.addEventListener('input', ()=> calcul());

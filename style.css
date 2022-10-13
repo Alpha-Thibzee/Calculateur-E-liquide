@@ -42,4 +42,5 @@ input:focus {
 .text-alert {
     margin: 0;
     margin: 2vh;
+    color: red;
 }

@@ -39,3 +39,7 @@ input:focus {
     border-radius: 15px;
     border-style:solid;
 }
+.text-alert {
+    margin: 0;
+    margin: 2vh;
+}
